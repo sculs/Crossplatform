@@ -1,0 +1,34 @@
+<ion-view view-title="About" hide-nav-bar="true">
+    <ion-header-bar class="bar-calm">
+        <h1 class="title">Stockholm Bed & Breakfast</h1>
+    </ion-header-bar>
+
+    <ion-content>
+        <h1 class="text-center">Log in</h1>
+        <form name="aboutForm" ng-submit="submit()">
+
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Email</span>
+                <input type="email" name="myEmail" placeholder="Type in your email" required
+                       ng-model="data.email">
+                <div ng-show="myForm.myEmail.$error.email"
+                     class="error">
+                    Type in a valid email!
+                </div>
+            </label>
+
+            <lable class="item item-input item-stacked-label">
+                <span class="input-label">Password</span><sup class="warn">*</sup>
+                <input type="password" name="password" placeholder="Password" required>
+            </lable>
+
+            <input type="submit"
+                   class="button button-block button-positive"
+                   value="Sign in"
+                   ng-click="">
+        </form>
+
+    </ion-content>
+
+
+</ion-view>

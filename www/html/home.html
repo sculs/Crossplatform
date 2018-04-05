@@ -1,0 +1,135 @@
+<ion-view view-title="Home" hide-nav-bar="true">
+
+    <ion-header-bar class="bar-calm">
+        <h1 class="title">Stockholm Bed & Breakfast</h1>
+    </ion-header-bar>
+
+    <ion-content>
+        <!--Logo image-->
+        <div class="item item-image">
+            <img src="img/gamlaStan.jpg" alt="Hotel" style="height: 50%">
+        </div>
+
+
+        <form name="infoForm" ng-submit="submit()">
+            <!--Date picker-->
+            <div class="row">
+                <div class="col col-50">
+                    <label class="item item-input item-stacked-label" for="from">
+            <span class="input-label">
+              <i class="icon ion-calendar placeholder-icon"></i>
+              &nbsp Check in
+            </span>
+                        <input type="date"
+                               name="checkIn"
+                               placeholder="Date"
+                               id="from"
+                               required
+                               min="{{setMinDate() | date:'yyyy-MM-dd'}}"
+                               ng-model="data.checkIn">
+
+                    </label>
+                    <!--<p> Valid? {{data.checkIn | date:"yyyy-MM-dd"}} </p>-->
+                </div>
+
+                <div class="col">
+                    <label class="item item-input item-stacked-label" for="to">
+            <span class="input-label">
+              <i class="icon ion-calendar placeholder-icon"></i>
+              &nbsp Check out
+            </span>
+                        <input type="date"
+                               name="checkOut"
+                               placeholder="Date"
+                               id="to"
+                               required
+                               min="{{data.checkIn | date:'yyyy-MM-dd'}}"
+                               ng-model="data.checkOut">
+                    </label>
+                </div>
+            </div>
+
+            <!--Show picked dates & days -->
+            <!--<div>-->
+            <!--<button onclick="myFunc()">get</button>-->
+            <!--<p id="dayFrom"></p>-->
+            <!--<p id="dayTo"></p>-->
+            <!--<p id="range"></p>-->
+            <!--</div>-->
+
+            <div class="row">
+                <div class="list col col-50">
+                    <select class="item" ng-model="data.roomtype" style="width: 100%">
+                        <option value="">Choose room...</option>
+                        <option value="single">Single Room</option>
+                        <option value="double">Double Room</option>
+                        <option value="family">Family Room</option>
+                    </select>
+                    <!--<p> Valid? {{data.roomtype}} </p>-->
+
+                    <ion-toggle class="item" style="width: 100%"
+                                ng-model="data.breakfast"
+                                toggle-class="toggle-calm">
+                        <span class="breakfast">Breakfast</span>
+                    </ion-toggle>
+                    <!--<p> Valid? {{data.breakfast}} </p>-->
+
+                </div>
+
+                <!--<div class="list col" ng-controller="homeTabCtrl">-->
+                <div class="list col">
+                    <p style="height: 10px">
+                    <div class="button-bar box-home">
+                        <button class="">Adult:</button>
+                        <a class="button button-small button-calm" ng-click="minus1()">-</a>
+                        <button class="button button-small">{{count1}}</button>
+                        <a class="button button-small button-calm " ng-click="plus1()">+</a>
+                    </div>
+                    <!--<p> Valid? {{count1}} </p>-->
+                    <p style="height: 10px">
+                    <div class="button-bar">
+                        <button class="">Child:</button>
+                        <a class="button button-small button-calm " ng-click="minus2()">-</a>
+                        <button class="button button-small">{{count2}}</button>
+                        <a class="button button-small button-calm " ng-click="plus2()">+</a>
+                    </div>
+                    <!--<p> Valid? {{count2}} </p>-->
+                </div>
+
+            </div>
+
+            <!--Submit button-->
+            <!--<a type="submit"-->
+            <!--class="button button-block button-calm"-->
+            <!--href="#/tab/list"-->
+            <!--ng-click="">-->
+            <!--Check Availability-->
+            <!--</a>-->
+
+
+            <a type="submit"
+               ng-click="dualFunc()"
+               class="button button-block button-energized"
+               href="#tab/home/{{data.roomtype}}">
+                Check Availability
+            </a>
+            <!--<a type="submit"-->
+            <!--ng-click="dualFunc()"-->
+            <!--class="button button-block button-energized"-->
+            <!--href="#tab/home/{{data.roomtype}}">-->
+            <!--Check Availability-->
+            <!--</a>-->
+
+
+        </form>
+
+        <!--<p>{{data}}</p>-->
+        <!--<h4>Response from the server</h4>-->
+        <!--<div>{{response2.data}}</div>-->
+
+
+    </ion-content>
+
+</ion-view>
+
+

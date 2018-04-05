@@ -1,0 +1,71 @@
+<ion-view view-title="Confirm">
+    <ion-content class="padding">
+
+        <h3 style="text-align: center">Guest information</h3>
+
+        <form name="myForm" ng-submit="submit()">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">First Name</span>
+                <input type="text" name="name" placeholder="First Name" required
+                       ng-model="data.name">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Last Name</span>
+                <input type="text" name="lastname" placeholder="Last Name" required
+                       ng-model="data.lastname">
+            </label>
+
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Email</span>
+                <input type="email" name="myEmail" placeholder="Type in your email" required
+                       ng-model="data.email">
+                <div ng-show="myForm.myEmail.$error.email"
+                     class="error">
+                    Type in a valid email!
+                </div>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Telephone</span>
+                <input type="tel" name="telephone" placeholder="Contact number"
+                       ng-model="data.telephone">
+            </label>
+
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Gender
+                </div>
+                <select ng-model="data.gender">
+                    <option value="">Choose...</option>
+                    <option value="">Male</option>
+                    <option value="">Femail</option>
+                </select>
+            </label>
+
+
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Age</span>
+                <input type="number" name="age" placeholder="age"
+                       ng-model="data.age">
+            </label>
+
+            <!--/////////////////////////////////////////////////-->
+            <!--<button class="button button-positive" ng-click="showAlert()">-->
+            <!--Alert-->
+            <!--</button>-->
+            <!--/////////////////////////////////////////////////-->
+
+
+            <input type="submit"
+                   class="button button-block button-positive"
+                   value="Confirm"
+                   ng-click="showAlert()">
+        </form>
+
+
+        <!--<div class="item item-text-wrap">{{data}}</div>-->
+        <!--<h4>Response from the server</h4>-->
+        <!--<div>{{response}}</div>-->
+        <!--<div>{{showAlert(true)}}</div>-->
+    </ion-content>
+</ion-view>

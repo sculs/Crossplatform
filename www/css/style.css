@@ -1,0 +1,82 @@
+
+/*.branding{*/
+    /*width: 50%;*/
+    /*max-width: 200px;*/
+    /*margin: 0 auto;*/
+    /*text-align: center;*/
+    /*margin-top: 20px;*/
+/*}*/
+
+.highlight {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.righttitle {
+    text-align: right;
+}
+
+
+.dim {
+    color: gray;
+    font-size: 10px;
+}
+.breakfast {
+  color: #0c60ee;
+  font-size: 0.8rem;
+}
+
+.text-color {
+    color: #0c60ee;
+}
+
+.box-home {
+  style: "height:90px";
+  align-content: center;
+  vertical-align: middle;
+}
+
+.mySlides {
+    /*display:none;*/
+}
+
+
+.error{
+    color: red;
+}
+
+input.ng-invalid-email{
+    color: red;
+}
+
+input.ng-valid-email{
+    color: green;
+}
+
+
+.slider {
+    height: 100%;
+}
+.slider-slide {
+    padding-top: 0px;
+    background-color: #fff;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.line-calm {
+    color: #11c1f3;
+    /*the color of bar-calm*/
+}
+
+
+.map{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.contact-title{
+    height: 20px;
+}

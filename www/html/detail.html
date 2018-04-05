@@ -1,0 +1,72 @@
+<ion-view view-title="Details" hide-nav-bar="">
+
+    <!--<ion-header-bar class="bar-calm">-->
+    <!--<ion-nav-back-button class="button-clear">-->
+    <!--<i class="ion-arrow-left-c"></i> Back-->
+    <!--</ion-nav-back-button>-->
+    <!--<h1 class="title">Stockholm Bed & Breakfast</h1>-->
+    <!--</ion-header-bar>-->
+
+    <ion-content>
+        <ion-list class="list">
+            <ion-item class="item-text-wrap"
+                      ng-repeat="item in rooms | filter: {roomtype:whichType}">
+
+                <div animation="slide-left-right-ios7">
+
+                    <ion-slide-box active-slide="myActiveSlide">
+                        <ion-slide>
+                            <div class="box blue"><img class="mySlides" src={{item.img}} style="width:100%"></div>
+                        </ion-slide>
+                        <ion-slide>
+                            <div class="box blue"><img class="mySlides" src={{item.img2}} style="width:100%"></div>
+                        </ion-slide>
+                        <ion-slide>
+                            <div class="box yellow"><img class="mySlides" src={{item.img3}} style="width:100%"></div>
+                        </ion-slide>
+                        <ion-slide>
+                            <div class="box pink"><img class="mySlides" src={{item.img4}} style="width:100%"></div>
+                        </ion-slide>
+                        <ion-slide>
+                            <div class="box blue"><img class="mySlides" src={{item.img5}} style="width:100%"></div>
+                        </ion-slide>
+                    </ion-slide-box>
+                </div>
+                <div>
+                    <h2 class="capitalize"><span class="highlight righttitle"> {{item.roomtype}} Room</span></h2>
+                    <h4 class="dim">Breakfast: <b>{{data.showbreakfast}}</b></h4>
+                    <h4 class="dim"><b>{{data.adult}}</b> adults, <b>{{data.child}}</b> children</h4>
+                    <h3 class="righttitle">Price
+                        <small> (per night)</small>
+                        : &nbsp&nbsp&nbsp&nbsp&nbsp
+                        <span class="highlight">{{item.price}}</span> kr
+                    </h3>
+                    <div class="dim righttitle">Fee for breakfast (per day): <b>{{data.persons * 20}}</b> kr</div>
+                    <h3 class="righttitle">Total Price: &nbsp&nbsp&nbsp&nbsp&nbsp
+                        <span class="highlight">{{(20 * data.persons * data.days) + (item.price * data.days)}}</span> kr
+                    </h3>
+                    <!--<p>{{item.price}}</p>-->
+                    <!--<p>{{data.days}}</p>-->
+                    <hr class="line-calm">
+
+                    <h2>Booking information</h2>
+                    <h4>Check in: <span class="text-color">{{data.checkInText}}</span></h4>
+                    <h4>Check out: <span class="text-color">{{data.checkOutText}}</span></h4>
+                    <h4>Days of stay: <span class="text-color">{{data.days}}</span></h4>
+                    <h4>Guests: {{data.adult}} adults, {{data.child}} children</h4>
+                    <hr class="line-calm">
+                </div>
+                <!--<p>room type: {{data.roomtype}}</p>-->
+                <!--<p>count1: {{count1}}</p>-->
+
+                <div>
+                    <a class="button button-block button-calm" href="#/tab/confirm">
+                        Book
+                    </a>
+                </div>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+
+</ion-view>
